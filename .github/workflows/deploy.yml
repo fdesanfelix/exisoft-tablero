@@ -41,6 +41,10 @@ jobs:
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
+        with:
+          # Habilita Pages automáticamente si todavía no está activo en el repo.
+          # Evita el error "Get Pages site failed - Not Found" en el primer deploy.
+          enablement: true
 
       - name: Upload dist
         uses: actions/upload-pages-artifact@v3
